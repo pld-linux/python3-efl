@@ -10,12 +10,12 @@
 Summary:	Python bindings for Enlightenment Foundation Libraries
 Summary(pl.UTF-8):	Wiązania Pythona do bibliotek EFL (Enlightenment Foundation Libraries)
 Name:		python-efl
-Version:	1.8.0
+Version:	1.8.1
 Release:	1
 License:	LGPL v3+
 Group:		Development/Languages/Python
-Source0:	http://download.enlightenment.org/rel/bindings/python/%{name}-%{version}.tar.gz
-# Source0-md5:	58a55193caee3c2c74fd962cc17bc9c1
+Source0:	http://download.enlightenment.org/rel/bindings/python/%{name}-%{version}.tar.bz2
+# Source0-md5:	dafb875fbe7f5874ecf3db3cf351e1fe
 URL:		http://trac.enlightenment.org/e/wiki/Python
 BuildRequires:	python-dbus-devel >= %{py_dbus_ver}
 BuildRequires:	ecore-devel >= %{ecore_ver}
@@ -236,6 +236,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_examplesdir}/%{name}-%{version}/elementary/images
 %dir %{_examplesdir}/%{name}-%{version}/emotion
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/emotion/test_emotion.py
+%{_examplesdir}/%{name}-%{version}/emotion/theme.edj
 
 %files -n python-e_dbus
 %defattr(644,root,root,755)
@@ -250,6 +251,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-edje
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/efl/edje.so
+%attr(755,root,root) %{py_sitedir}/efl/edje_edit.so
 %{py_sitedir}/edje
 
 %files -n python-elementary
