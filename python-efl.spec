@@ -12,12 +12,13 @@
 Summary:	Python bindings for Enlightenment Foundation Libraries
 Summary(pl.UTF-8):	Wiązania Pythona do bibliotek EFL (Enlightenment Foundation Libraries)
 Name:		python-efl
-Version:	1.10.0
+Version:	1.10.1
 Release:	1
 License:	LGPL v3+
 Group:		Development/Languages/Python
 Source0:	http://download.enlightenment.org/rel/bindings/python/%{name}-%{version}.tar.bz2
-# Source0-md5:	4a4f81fbf7d31a37bb96aaeb773d169c
+# Source0-md5:	5f95d3ee5c4bb2a1a616d44d0cc5f0d0
+Patch0:		%{name}-cython.patch
 URL:		http://trac.enlightenment.org/e/wiki/Python
 BuildRequires:	python-dbus-devel >= %{py_dbus_ver}
 BuildRequires:	ecore-devel >= %{ecore_ver}
@@ -216,6 +217,7 @@ Wiązania Pythona do biblioteki Evas.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python,/usr/bin/python,' \
 	examples/dbus/*.py \
@@ -225,11 +227,13 @@ Wiązania Pythona do biblioteki Evas.
 %build
 CC="%{__cc}" \
 CFLAGS="%{rpmcflags}" \
+DISABLE_CYTHON=1 \
 %{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
+DISABLE_CYTHON=1 \
 %{__python} setup.py install \
 	--skip-build \
 	--root=$RPM_BUILD_ROOT \
