@@ -13,7 +13,7 @@ Summary:	Python bindings for Enlightenment Foundation Libraries
 Summary(pl.UTF-8):	Wiązania Pythona do bibliotek EFL (Enlightenment Foundation Libraries)
 Name:		python-efl
 Version:	1.10.1
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Development/Languages/Python
 Source0:	http://download.enlightenment.org/rel/bindings/python/%{name}-%{version}.tar.bz2
@@ -97,6 +97,7 @@ Group:		Development/Languages/Python
 Requires:	%{name}-base = %{version}-%{release}
 Requires:	ecore >= %{ecore_ver}
 Obsoletes:	python-e_dbus < 1.8.0
+Obsoletes:	python-e_dbus-devel < 1.8.0
 
 %description -n python-e_dbus
 D-Bus Python integration for Ecore main loop. There is also e_dbus
@@ -134,6 +135,7 @@ Group:		Development/Languages/Python
 Requires:	python-ecore = %{version}-%{release}
 Requires:	ecore-input >= %{ecore_ver}
 Requires:	ecore-x >= %{ecore_ver}
+Obsoletes:	python-ecore-x-devel < 1.8.0
 
 %description -n python-ecore-x
 Python bindings for Ecore X library.
@@ -193,6 +195,7 @@ Summary(pl.UTF-8):	Wiązania Pythona do biblioteki Ethumb
 Group:		Development/Languages/Python
 Requires:	%{name}-base = %{version}-%{release}
 Requires:	ethumb-libs >= %{ethumb_ver}
+Obsoletes:	python-ethumb-devel < 1.8.0
 
 %description -n python-ethumb
 Python bindings for Ethumb library.
