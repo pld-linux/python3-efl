@@ -13,7 +13,7 @@ Summary:	Python bindings for Enlightenment Foundation Libraries
 Summary(pl.UTF-8):	Wiązania Pythona do bibliotek EFL (Enlightenment Foundation Libraries)
 Name:		python-efl
 Version:	1.10.1
-Release:	2
+Release:	3
 License:	LGPL v3+
 Group:		Development/Languages/Python
 Source0:	http://download.enlightenment.org/rel/bindings/python/%{name}-%{version}.tar.bz2
