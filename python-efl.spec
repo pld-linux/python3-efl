@@ -231,16 +231,13 @@ Wiązania Pythona do biblioteki Evas.
 CC="%{__cc}" \
 CFLAGS="%{rpmcflags}" \
 DISABLE_CYTHON=1 \
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 DISABLE_CYTHON=1 \
-%{__python} setup.py install \
-	--skip-build \
-	--root=$RPM_BUILD_ROOT \
-	--optimize=2
+%py_install
 
 %py_postclean
 
